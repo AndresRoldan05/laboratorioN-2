@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <style type="text/css">
+        .old{
+          background-color: #6CE26C !important;
+          background-image: none !important;
+          color: #000000 !important;}
+
+    </style>
+    <h:head>
+        <title>Lista de Actores</title>
+    </h:head>
+    <h:body>
+        <h1>Lista de Actores</h1>
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="List"/></h1>
+                <h:dataTable value="#{SakilaBean.allActores}" var="item">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="ActorId"/>
+                        </f:facet>
+                        <h:outputText value="#{item.actorId}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="FirstName"/>
+                        </f:facet>
+                        <h:outputText value="#{item.firstName}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="LastName"/>
+                        </f:facet>
+                        <h:outputText value="#{item.lastName}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="LastUpdate"/>
+                        </f:facet>
+                        <h:outputText value="#{item.lastUpdate}">
+                            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                        </h:outputText>
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+
